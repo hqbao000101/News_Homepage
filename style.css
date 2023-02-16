@@ -1,0 +1,372 @@
+@font-face {
+    font-family: inter-regular;
+    src: url(./assets/fonts/static/Inter-Regular.ttf);
+}
+
+@font-face {
+    font-family: inter-bold;
+    src: url(./assets/fonts/static/Inter-Bold.ttf);
+}
+
+@font-face {
+    font-family: inter-extrabold;
+    src: url(./assets/fonts/static/Inter-ExtraBold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+body {
+    position: relative;
+    font-family: inter-regular;
+    padding: 50px 100px 10px;
+    line-height: 35px;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 50px 0;
+
+    position: relative;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    gap: 75px;
+}
+
+header ul li {
+    color: gray;
+    font-weight: 400;
+    font-size: 18px;
+    border-bottom: 3px solid white;
+}
+
+header ul li:hover {
+    color: hsl(5, 85%, 63%);
+    border-bottom: 3px solid hsl(5, 85%, 63%);
+}
+
+header svg:nth-of-type(2) {
+    display: none;
+}
+
+header #nav-menu {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    z-index: 1;
+    display: none;
+
+    background-color: white;
+    color: black;
+    height: 100vh;
+    width: 60%;
+    padding-top: 100px;
+
+    animation: navbar_animate .2s linear;
+    overflow: hidden;
+}
+
+@keyframes navbar_animate {
+    0% {
+        opacity: 0;
+        width: 20%;
+    }
+
+    50% {
+        opacity: 0.5;
+        width: 40%;
+    }
+
+    100% {
+        opacity: 1;
+        width: 60%;
+    }
+}
+
+header #nav-menu svg {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    z-index: 2;
+}
+
+header #nav-menu ul {
+    display: block;
+    margin-top: 100px;
+}
+
+header #nav-menu ul li {
+    color: black;
+    font-size: 25px;
+    margin: 20px;
+    padding: 10px;
+    border-left: 3px solid white;
+}
+
+header #nav-menu ul li:hover {
+    color: hsl(5, 85%, 63%);
+    border-left: 3px solid hsl(5, 85%, 63%);
+    border-bottom-color: white;
+    background-color: hsl(36, 100%, 99%);
+}
+
+header #menu-icon:hover g {
+    fill:hsl(5, 85%, 63%) !important;
+}
+
+header #nav-menu #menu-close:hover g {
+    fill:hsl(5, 85%, 63%) !important;
+}
+
+/* BANNER */
+#banner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,1fr);
+    grid-template-rows: repeat(auto-fit, minmax(400px,auto));
+    gap: 20px;
+
+    grid-template-areas: 
+    'image'
+    'title'
+    'content'
+    'news';
+}
+
+#banner #banner-image {
+    grid-column: 1 / 3;
+    background-image: url(./assets/images/image-web-3-desktop.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#banner h1 {
+    font-family: inter-extrabold;
+    font-size: 75px;
+    line-height: normal;
+}
+
+#banner #read-more p {
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 50px;
+    padding-right: 40px;
+    opacity: 0.7;
+}
+
+#banner #read-more button {
+    color: hsl(36, 100%, 99%);
+    font-family: inter-bold;
+    letter-spacing: 7px;
+    font-size: 16px;
+    text-transform: uppercase;
+
+    background-color: hsl(5, 85%, 63%);
+    padding: 25px 50px;
+    border: none;
+}
+
+#banner #read-more button:hover {
+    background-color: hsl(240, 100%, 5%);
+}
+
+#banner aside {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+}
+
+#banner aside div {
+    background-color: hsl(240, 100%, 5%);
+    color: hsl(36, 100%, 99%);
+    padding: 35px 50px;
+} 
+
+#banner aside h3 {
+    color: hsl(35, 77%, 62%);
+    font-family: inter-bold;
+    font-size: 50px;
+    line-height: normal;
+    margin-bottom: 25px;
+}
+
+#banner aside h4 {
+    color: hsl(36, 100%, 99%);
+    font-family: inter-bold;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+#banner aside h4:hover {
+    color: hsl(35, 77%, 62%);
+}
+
+#banner aside p {
+    font-size: 20px;
+    color: hsl(36, 100%, 99%);
+    opacity: 0.7;
+}
+
+#banner aside hr {
+    margin: 50px 0;
+    border-color: hsl(36, 100%, 99%);
+    opacity: 0.5;
+}
+
+/* NEWS */
+#other-news {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px auto;
+}
+
+#other-news .news-item {
+    display: flex;
+    max-width: 500px;
+}
+
+#other-news .news-item img {
+    min-width: 150px;
+    max-height: 200px;
+}
+
+#other-news .news-item div {
+    margin: 0 20px;
+}
+
+#other-news .news-item div h3 {
+    font-family: inter-extrabold;
+    font-size: 50px;
+    opacity: 0.3;
+    line-height: normal;
+}
+
+#other-news .news-item div h4 {
+    font-family: inter-extrabold;
+    font-size: 23px;
+    margin: 20px 0;
+    opacity: 0.8;
+}
+
+#other-news .news-item div h4:hover {
+    color: hsl(5, 85%, 63%);
+    opacity: 1;
+}
+
+#other-news .news-item div p {
+    font-size: 18px;
+    opacity: 0.7;
+    padding-right: 45px;
+}
+
+/* FOOTER */
+.attribution { 
+    background-color: black;
+    font-size: 11px; 
+    text-align: center; 
+    opacity: 0.5;
+    color: white;
+    font-size: 15px;
+    opacity: 0;
+}
+
+.attribution a { 
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: inter-extrabold;
+    color: #2ed573;
+}
+
+.attribution:hover {
+    animation: appearFooter 2s linear infinite;
+}
+
+/* ANIMATE */
+@keyframes appearFooter {
+    0% { 
+        opacity: 0;
+    }
+    50% { 
+        opacity: 0.3;
+    }
+    100% { 
+        opacity: 0.7;
+    }
+}
+
+#shade-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    display: none;
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 1023px) {
+    body {
+        padding: 10px;
+    }
+
+    /* Header */
+    header > ul {
+        display: none;
+    }
+
+    header #menu-icon {
+        display: block;
+    }
+
+    #banner #banner-image {
+        background-image: url(./assets/images/image-web-3-mobile.jpg);
+    }
+
+    header #nav-menu svg {
+        top: 10px;
+        right: 10px;
+    }
+
+    /* Banner */
+    #banner #banner-image {
+        grid-area: image;
+    }
+
+    #banner aside {
+        grid-area: news;
+        margin-top: 100px;
+    }
+
+    #banner h1 {
+        grid-area: title;
+    }
+
+    #banner #read-more {
+        grid-area: content;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    /* News */
+    #other-news {
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    #other-news .news-item {
+        margin: 50px 0;
+        max-width: 500px;
+    }
+}
