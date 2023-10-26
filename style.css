@@ -403,3 +403,20 @@ header #nav-menu #menu-close:hover g {
     line-height: 1.8;
   }
 }
+
+@media only screen and (max-width: 376px) {
+  #banner h1 {
+    font-size: 45px;
+  }
+
+  #other-news .news-item div h3 {
+    font-size: 40px;
+  }
+  #other-news .news-item div h4 {
+    font-size: 18px;
+    margin: 17px 0;
+  }
+  #other-news .news-item div p {
+    font-size: 15px;
+  }
+}
